@@ -115,6 +115,13 @@ from the following locations:
 * [Metabolites](http://bridgedb.org/data/gene_database/)
 * [Gene Variants](http://bridgedb.org/data/variant/)
 
+Add the dbLocation with the following lines (first obtain in which folder, aka working directory 'wd', you are currently).
+Add the correct folder location at the dots:
+```{r, eval=FALSE}
+getwd()
+dbLocation <- ("/home/..../BridgeDb/wikidata_diseases.bridge")
+```
+
 ## Loading Databases
 
 Once you have downloaded an identifier mapping database, either manually or via the getDatabase()
