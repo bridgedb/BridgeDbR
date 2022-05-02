@@ -1,5 +1,6 @@
-getDatabase <- function(organism,location=NA,website="https://www.bridgedb.org/data/gene_database/") {
+getDatabase <- function(organism,location=NA,website="https://bridgedb.github.io/data/gene_database/") {
  if(is.na(location)) location = tempdir();
+
  code = getOrganismCode(organism)
  names = getBridgeNames(code,website=website)
  dates = c()
@@ -18,7 +19,29 @@ getDatabase <- function(organism,location=NA,website="https://www.bridgedb.org/d
   }
   j = j+1
  }
- url = paste(website,names[c],sep="")
+
+ pattern = paste("http[^\"]*\">", names[c], sep="")
+ lines = readLines(curl(website))
+
+ i = 1
+ result <- c()
+
+ for (line in lines) {
+  expr<- gregexpr(pattern,line, perl=TRUE)
+  matches = expr[[1]]
+  matchLengths = attributes(matches)$match.length
+  for (matchCounter in 1:length(matches)) {
+   start = matches[matchCounter]
+   stop = start + matchLengths[matchCounter] - (nchar(names[c]) + 3)
+   matchedString = substr(line,start,stop)
+   if (nchar(matchedString) > 0) {
+    result[i] <- matchedString
+    i = i + 1
+   }
+  }
+ }
+
+ url = result[1]
  file = paste(location,"/",name,sep="")
  download.file(url,file, mode="wb")
  file

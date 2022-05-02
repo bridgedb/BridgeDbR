@@ -1,18 +1,17 @@
-\name{map}
-\alias{map}
+\name{maps}
+\alias{maps}
 \title{
-Converts one identifier into other identifiers for the given target data source.
+Converts multiple identifiers into other identifiers for the given target data source.
 }
 \description{
 Converts one identifier into other identifiers for the given target data source.
 }
 \usage{
-map(mapper, source, identifier, target)
+maps(mapper, identifiers, target)
 }
 \arguments{
  \item{mapper}{loaded BridgeDb identifier mapper}
- \item{source}{system code of the data source}
- \item{identifier}{identifier to be converted}
+ \item{identifiers}{data frame with identifiers to be converted, with a source and a identifier column}
  \item{target}{system code of the target data source (optional)}
 }
 \value{
@@ -22,8 +21,11 @@ map(mapper, source, identifier, target)
 \dontrun{
 location <- getDatabase("Bacillus subtilis")
 mapper <- loadDatabase(location)
-map(mapper, "L", "885041", "X")
-map(mapper, "L", "885041")
+input = data.frame(
+  source= c("L"),
+  identifier= c("885041")
+)
+maps(mapper,input)
 }
 }
 \author{

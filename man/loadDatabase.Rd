@@ -22,8 +22,10 @@ loadDatabase(location)
  \item{mapper}{an IDMapper object}
 }
 \examples{
-location <- getDatabase("Mycobacterium tuberculosis")
+\dontrun{
+location <- getDatabase("Bacillus subtilis")
 mapper <- loadDatabase(location)
+}
 }
 \author{
 Egon Willighagen
