@@ -20,6 +20,7 @@ To install this package, start R and enter:
 install.packages("BiocManager")
 BiocManager::install("BridgeDbR")
 ```
+** Note that setting up this package in Ubuntu might require you to load rJava; you can find documentation on that [here](install.packages('rJava') ## See https://www.r-bloggers.com/2018/02/installing-rjava-on-ubuntu/ if you have issues with this package on Ubuntu.)
 
 To view documentation for the version of this package installed in your system, start R and enter:
 
