@@ -1,11 +1,19 @@
+CHANGES IN VERSION 2.10.1
+-------------------------
+
+NEW FEATURES
+
+* Fixed backwards compatibility of map()
+* Fixed returning an empty data frame when no mappings are found for map()
+* Fixed return the results maps()
+
+
 CHANGES IN VERSION 2.9.2
 ------------------------
 
 NEW FEATURES
 
     o Updated to BridgeDb 3.0.21
-* Fixed backwards compatibility of map()
-* Fixed returning an empty data frame when no mappings are found for `map()`
 
 CHANGES IN VERSION 2.9.1
 ------------------------
