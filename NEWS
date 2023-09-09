@@ -4,6 +4,7 @@ CHANGES IN VERSION 2.9.2
 NEW FEATURES
 
     o Updated to BridgeDb 3.0.21
+* Fixed backwards compatibility of map()
 
 CHANGES IN VERSION 2.9.1
 ------------------------
