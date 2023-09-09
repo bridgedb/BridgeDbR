@@ -13,4 +13,5 @@ maps <- function(mapper, identifiers, target = NULL){
         target = target
       )}
   })))
+    allResults
 }
